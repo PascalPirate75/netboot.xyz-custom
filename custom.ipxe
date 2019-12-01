@@ -1,12 +1,23 @@
 #!ipxe
 ###
-### netboot.xyz-custom menu
+### netboot.xyz-custom menu example
 ###
 
-:start
-echo Hello world!
-sleep 10
+:custom
+clear custom_choice
+menu This is PPC Menu
+item --gap This is the first sub menu
+item option_one ${space} Loading an ISO
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
 
+:option_one
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd debian-live-10.2.0-i386-standard.iso
+boot || goto custom_exit
+
 :custom_exit
-exit 0
+chain utils.ipxe
+exit
