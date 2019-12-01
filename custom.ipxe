@@ -15,7 +15,7 @@ goto custom_exit
 
 :option_one
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd debian-live-10.2.0-i386-standard.iso
+initrd test.iso
 boot || goto custom_exit
 
 :custom_exit
