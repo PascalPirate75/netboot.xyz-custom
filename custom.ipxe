@@ -15,7 +15,7 @@ goto custom_exit
 
 :option_one
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd test.iso
+initrd http://192.168.0.177/USB/test.iso
 boot || goto custom_exit
 
 :custom_exit
