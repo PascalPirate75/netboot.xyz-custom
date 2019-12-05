@@ -22,7 +22,6 @@ boot || goto custom_exit
 :option_two
 kernel tftp://192.168.0.114/sf/vmlinuz
 initrd tftp://192.168.0.114/sf/initrd.gz
-imgargs vmlinuz initrd=initrd.gz pmedia=cd
 boot || goto custom_exit
 
 :custom_exit
