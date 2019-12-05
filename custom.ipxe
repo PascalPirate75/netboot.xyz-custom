@@ -21,8 +21,8 @@ boot || goto custom_exit
 
 :option_two
 kernel http://192.168.0.114:82/sf/vmlinuz
-initrd http://192.168.0.114:82/sf/initrd.gz
-append initrd=Puppy/initrd.gz method=nfs:172.11.11.250:/WD2/ext/pxelinux/Puppy lang=us keymap=us ip=dhcp noipv6
+initrd http://192.168.0.114:82/sf/initrd
+append initrd=sf/initrd.gz method=nfs:172.11.11.250:/WD2/ext/pxelinux/Puppy lang=us keymap=us ip=dhcp noipv6
 
 boot || goto custom_exit
 
