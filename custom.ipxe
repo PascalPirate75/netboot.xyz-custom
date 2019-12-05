@@ -8,6 +8,7 @@ clear custom_choice
 menu This is PPC Menu
 item --gap This is the first sub menu
 item option_one ${space} Loading an ISO
+item option_two ${space} Loading ISO guts
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
@@ -16,6 +17,12 @@ goto custom_exit
 :option_one
 kernel https://boot.netboot.xyz/memdisk raw iso
 initrd http://192.168.0.177/USB/test.iso
+boot || goto custom_exit
+
+:option_two
+kernel https://192.168.0.114/GoodStuff/sf/vmlinuz
+initrd https://192.168.0.114/GoodStuff/sf/initrd.gz
+imgargs vmlinuz initrd=initrd.gz pmedia=cd
 boot || goto custom_exit
 
 :custom_exit
