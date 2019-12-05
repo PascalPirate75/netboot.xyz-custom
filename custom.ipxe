@@ -20,8 +20,8 @@ initrd http://192.168.0.177/USB/test.iso
 boot || goto custom_exit
 
 :option_two
-kernel tftp://192.168.0.114/sf/vmlinuz
-initrd tftp://192.168.0.114/sf/initrd.gz
+kernel http://192.168.0.114:87/sf/vmlinuz
+initrd http://192.168.0.114:87/sf/initrd.gz
 boot || goto custom_exit
 
 :custom_exit
