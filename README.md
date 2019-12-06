@@ -2,6 +2,8 @@
 
 ### EXPERIMENTAL
 
+### so far have not had any sucsess.  but having fun.
+
 This is a disaster I am working on time will tell what it turns into.
 
 This repo will allow you to create custom menus within netboot.xyz.
