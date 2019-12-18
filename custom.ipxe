@@ -14,9 +14,9 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_two
-kernel http://192.168.0.177:82/vmlinuz
+kernel http://192.168.0.177:82/vmlinuz ip=dhcp boot=casper netboot=http fetch=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
 initrd http://192.168.0.177:82/initrd 
-imgargs vmlinuz boot=casper ignore_uuid toram lang=us keymap=us ip=dhcp noipv6
+#imgargs vmlinuz boot=casper ignore_uuid toram lang=us keymap=us ip=dhcp noipv6
 
 boot || goto custom_exit
 
