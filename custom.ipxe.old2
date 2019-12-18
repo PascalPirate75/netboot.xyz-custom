@@ -7,16 +7,21 @@
 clear custom_choice
 menu This is PPC Menu
 item --gap This is the first sub menu
+item option_one ${space} Loading an ISO
 item option_two ${space} Loading ISO guts
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
 goto custom_exit
 
+:option_one
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://192.168.0.177/USB/test.iso
+boot || goto custom_exit
+
 :option_two
-kernel http://192.168.0.177:82/vmlinuz
-initrd http://192.168.0.177:82/initrd 
-imgargs vmlinuz boot=casper ignore_uuid toram lang=us keymap=us ip=dhcp noipv6
+kernel http://192.168.0.114:82/sf/vmlinuz
+initrd http://192.168.0.114:82/sf/initrd.gz earlyshell lang=us keymap=us ip=dhcp noipv6
 
 boot || goto custom_exit
 
