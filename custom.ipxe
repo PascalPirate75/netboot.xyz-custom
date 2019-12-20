@@ -21,7 +21,8 @@ initrd http://192.168.0.177:82/initrd
 boot || goto custom_exit
 
 :option_two
-kernel http://192.168.0.177:82/vmlinuz ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
+kernel http://192.168.0.177:82/vmlinuz boot=live config hooks=filesystem username=live noeject fetch=http://192.168.0.177:82/os.sqfs
+# ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
 initrd http://192.168.0.177:82/initrd 
 boot || goto custom_exit
 
