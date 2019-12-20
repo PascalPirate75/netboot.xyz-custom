@@ -14,16 +14,16 @@ echo ${cls}
 goto ${custom_choice}
 goto custom_exit
 
-:option_one
-kernel http://192.168.0.177:82/vmlinuz keeppxe ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
-initrd http://192.168.0.177:82/initrd 
+#:option_one
+#kernel http://192.168.0.177:82/vmlinuz keeppxe ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
+#initrd http://192.168.0.177:82/initrd 
 #imgargs vmlinuz keeppxe boot=casper ignore_uuid toram lang=us keymap=us ip=dhcp noipv6
-boot || goto custom_exit
+#boot || goto custom_exit
 
 :option_two
 kernel http://192.168.0.177:82/vmlinuz
 initrd http://192.168.0.177:82/initrd 
-imgargs boot=live config hooks=filesystem username=live noeject fetch=http://192.168.0.177:82/os.sqfs
+imgargs hooks=filesystem username=owner noeject fetch=http://192.168.0.177:82/os.sqfs
 boot || goto custom_exit
 
 # ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
