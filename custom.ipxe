@@ -21,9 +21,9 @@ goto custom_exit
 #boot || goto custom_exit
 
 :option_two
-kernel http://192.168.0.177:82/vmlinuz
+kernel http://192.168.0.177:82/vmlinuz lang=us keymap=us ip=dhcp netboot=url url=http://192.168.0.177:82/os.sqfs initrd=initrd
 initrd http://192.168.0.177:82/initrd 
-imgargs fetch=http://192.168.0.177:82/os.sqfs
+#imgargs fetch=http://192.168.0.177:82/os.sqfs
 boot || goto custom_exit
 
 # ignore_uuid lang=us keymap=us ip=dhcp boot=casper netboot=url url=http://192.168.0.177:82/casper/os.sqfs initrd=initrd
