@@ -21,7 +21,7 @@ goto custom_exit
 #boot || goto custom_exit
 
 :option_two
-kernel http://192.168.0.177:82/vmlinuz lang=us keymap=us ip=dhcp boot=live config hooks=filesystem username=owner noeject root=sr0 fetch=http://192.168.0.177:82/os.sqfs initrd=initrd
+kernel http://192.168.0.177:82/vmlinuz lang=us keymap=us ip=dhcp username=owner noeject httpfs=http://192.168.0.177:82/os.sqfs initrd=initrd
 initrd http://192.168.0.177:82/initrd 
 #imgargs fetch=http://192.168.0.177:82/os.sqfs
 boot || goto custom_exit
